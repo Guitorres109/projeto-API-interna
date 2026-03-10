@@ -1,0 +1,231 @@
+/* =====================================================
+RESET BÁSICO
+Remove espaçamentos padrão do navegador
+e define um modelo de box mais previsível
+===================================================== */
+* {
+    margin: 0;            /* remove margem padrão */
+    padding: 0;           /* remove padding padrão */
+    box-sizing: border-box; /* largura/altura incluem padding e borda */
+}
+
+/* =====================================================
+ESTILO GERAL DA PÁGINA
+===================================================== */
+body {
+
+    /* fonte principal da página */
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* fundo em gradiente diagonal */
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    /* altura mínima da tela inteira */
+    min-height: 100vh;
+
+    /* usa flexbox para centralizar o conteúdo */
+    display: flex;
+    justify-content: center;  /* centraliza horizontalmente */
+    align-items: center;      /* centraliza verticalmente */
+
+    /* espaço nas bordas da tela */
+    padding: 20px;
+
+}
+
+/* =====================================================
+CONTAINER PRINCIPAL
+===================================================== */
+.container {
+
+    max-width: 800px; /* largura máxima */
+    width: 100%;      /* ocupa toda largura disponível */
+
+    background: white; /* fundo branco */
+
+    padding: 30px;     /* espaço interno */
+
+    border-radius: 20px; /* cantos arredondados */
+
+    /* sombra ao redor da caixa */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+
+}
+
+/* =====================================================
+TÍTULO PRINCIPAL
+===================================================== */
+h1 {
+
+    text-align: center;   /* centraliza o texto */
+
+    margin-bottom: 10px;  /* espaço abaixo do título */
+
+}
+
+/* =====================================================
+SUBTÍTULO
+===================================================== */
+.subtitle {
+
+    text-align: center;  /* centraliza texto */
+
+    margin-bottom: 30px; /* espaço abaixo */
+
+    color: #666;         /* cor cinza */
+
+}
+
+/* =====================================================
+ÁREA ONDE A IMAGEM DO CACHORRO APARECE
+===================================================== */
+.dog-area {
+
+    background: #f5f5f5;  /* fundo cinza claro */
+
+    border-radius: 15px;  /* cantos arredondados */
+
+    padding: 20px;        /* espaço interno */
+
+    margin-bottom: 20px;  /* espaço abaixo */
+
+    min-height: 400px;    /* altura mínima */
+
+    /* centraliza a imagem dentro da área */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* permite posicionamento absoluto interno */
+    position: relative;
+
+}
+
+/* =====================================================
+IMAGEM DO CACHORRO
+===================================================== */
+#dogImage {
+
+    width: 100%;        /* ocupa toda largura do container */
+
+    max-height: 400px;  /* altura máxima */
+
+    object-fit: contain; /* mantém proporção da imagem */
+
+    border-radius: 10px; /* cantos arredondados */
+
+    cursor: pointer;     /* muda cursor para indicar clique */
+
+}
+
+/* =====================================================
+NOME DA RAÇA DO CACHORRO
+===================================================== */
+#breedName {
+
+    position: absolute; /* posição absoluta dentro de .dog-area */
+
+    bottom: 20px; /* distância da parte inferior */
+    left: 20px;   /* distância da esquerda */
+
+    background: rgba(0,0,0,0.7); /* fundo preto transparente */
+
+    color: white; /* texto branco */
+
+    padding: 6px 14px; /* espaço interno */
+
+    border-radius: 20px; /* formato arredondado */
+
+}
+
+/* =====================================================
+ÁREA DE BOTÕES E BUSCA
+===================================================== */
+.controls,
+.search {
+
+    display: flex; /* usa flexbox */
+
+    gap: 10px;     /* espaço entre os elementos */
+
+    margin-bottom: 15px; /* espaço abaixo */
+
+}
+
+/* =====================================================
+BOTÕES
+===================================================== */
+button {
+
+    flex: 1; /* ocupa espaço proporcional */
+
+    padding: 12px; /* espaço interno */
+
+    border: none; /* remove borda padrão */
+
+    border-radius: 8px; /* cantos arredondados */
+
+    background: #764ba2; /* cor de fundo */
+
+    color: white; /* texto branco */
+
+    font-weight: bold; /* texto em negrito */
+
+    cursor: pointer; /* cursor de clique */
+
+}
+
+/* efeito quando o mouse passa sobre o botão */
+button:hover {
+
+    background: #667eea;
+
+}
+
+/* =====================================================
+CAMPO DE INPUT (BUSCA)
+===================================================== */
+input {
+
+    flex: 2; /* ocupa mais espaço que o botão */
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    border: 2px solid #ddd; /* borda cinza */
+
+    font-size: 16px;
+
+}
+
+/* =====================================================
+ESTADO DE CARREGAMENTO
+(desabilita interação)
+===================================================== */
+.loading {
+
+    opacity: 0.6; /* deixa o elemento transparente */
+
+    pointer-events: none; /* bloqueia cliques */
+
+}
+
+/* =====================================================
+MENSAGEM DE CARREGAMENTO
+===================================================== */
+.loading::after {
+
+    content: "Carregando..."; /* texto exibido */
+
+    position: absolute;
+
+    background: black;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 20px;
+
+}

@@ -85,6 +85,7 @@ app.get("/api/cachorros/:raca", (req, res) => {
     }
     const item = sortear(cachorros[raca]);
     //retorna resposta em json
+    
     res.json({
         //status de sucesso
         status: "success",
