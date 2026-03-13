@@ -49,7 +49,24 @@ function sortear(array){
 
 //Rotas API
 
-//http://localhost:3000/api/cachorros/aleatorio - Cachorro Aleatório
+//PAGINA INICIAL DA API
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "html/server.html"));
+})
+
+app.get("/api", (req, res) => {
+    res.sendFile(path.join(__dirname, "html/api.html"));
+})
+
+app.get("/verificar", (req, res) => {
+    res.json({
+        //status da resposta
+        status: "success",
+        //URL da mensagem sorteada
+        message: `Servidor está online e respondendo`
+    })
+})
+
 app.get("/api/cachorros/aleatorio", (req, res) => {
     //pegar todas as fotos e todas as raças 
     //Object.value pega os valores do objeto
@@ -64,7 +81,6 @@ app.get("/api/cachorros/aleatorio", (req, res) => {
         //URL da mensagem sorteada
         message: `http://localhost:${PORT}/fotos/${item}`
     })
-    console.log(" ")
 })
 
 
@@ -90,7 +106,7 @@ app.get("/api/cachorros/:raca", (req, res) => {
         //status de sucesso
         status: "success",
         //URL da mensagem sorteada
-        message: `htpp://localhost:${PORT}/fotos/${item}`
+        message: `http://localhost:${PORT}/fotos/${item}`
     });
 })
 

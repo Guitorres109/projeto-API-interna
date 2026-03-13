@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Servidor Ativo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#111827;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    text-align:center;
+    background:#1f2937;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+.status{
+    color:#22c55e;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.links{
+    margin-top:20px;
+}
+
+a{
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+.endpoint{
+    margin-top:8px;
+    font-family:monospace;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🐶 Dog API</h1>
+<p class="status">Servidor ativo e funcionando</p>
+
+<p>Use os endpoints abaixo para acessar a API:</p>
+
+<div class="links">
+
+<div class="endpoint">
+<a href="/api/">/api</a> → Documentação da API
+</div>
+
+<div class="endpoint">
+<a href="/api/cachorros/aleatorio">/api/cachorros/aleatorio</a>
+</div>
+
+<div class="endpoint">
+<a href="/api/cachorros/husky">/api/cachorros/husky</a>
+</div>
+
+</div>
+
+<p style="margin-top:25px; font-size:14px; color:#9ca3af;">
+API feita com Node.js + Express
+</p>
+
+</div>
+
+</body>
+</html>

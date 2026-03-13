@@ -2,5 +2,8 @@
     "husky": ["husky/1.jpg",    "husky/2.png",  "husky/3.jpg"],
     "pug": ["pug/1.jpg",    "pug/2.jpg",  "pug/3.jpg"],
     "beagle": ["beagle/1.webp",    "beagle/2.avif",  "beagle/3.jpg"],
-    "labrador": ["labrador/1.jpg",    "labrador/2.jpg",  "labrador/3.jpg"]
+    "labrador": ["labrador/1.jpg",    "labrador/2.jpg",  "labrador/3.jpg"],
+    "golden": ["golden/1.jpg",    "golden/2.jpg",  "golden/3.avif"],
+    "pastor-alemao": ["pastor-alemao/1.png",    "pastor-alemao/2.jpg",  "pastor-alemao/3.webp"],
+    "doberman": ["doberman/1.webp",    "doberman/2.webp",  "doberman/3.jpg"]
 }

@@ -17,8 +17,26 @@ const breedInput = document.getElementById("breedInput");
 //área onde a imagem aparece
 const dogArea = document.querySelector(".dog-area");
 
+const servidorUrl = "http://192.168.1.39:3000"
+const API_BASE = "http://192.168.1.39:3000/api"
 
-const API_BASE = "http://10.106.208.7:3000/api"
+function verificarServidor(){
+    fetch(`${servidorUrl}/verificar`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro na requisição");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Servidor está online e respondendo");
+            console.log(`Endereço do servidor: ${servidorUrl}`);
+        })
+        .catch(error => {
+            console.error("Erro ao verificar o servidor:", error);
+        });
+}
+verificarServidor()
 
 async function fetchFromApi(endpoint){
     
@@ -51,8 +69,9 @@ async function fetchFromApi(endpoint){
         }
     }catch (error){
         console.error("Erro:", error)
+        console.error("Servidor esta offline ou inacessível");
 
-        breedName.textContent = "Erro ao carregar";
+        breedName.textContent = "A conexão com o servidor falhou";
 
         dogImage.src = "";
 
@@ -66,9 +85,15 @@ function getRandomDog(){
 }
 
 async function getBreedDog() {
+
     // pegar valor digitado
-    let breed = breedInput.value.toLowerCase().trim();
-    console.log(breed)
+    const breed = breedInput.value
+        .toLowerCase()
+        .trim()
+        .replace(/-/g, " ")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    const apiBreed = breed.replace(/\s+/g, "-");
     if (!breed) {
         alert("Digite uma raça!");
         return;
@@ -76,7 +101,8 @@ async function getBreedDog() {
 
     try {
         // chama a API com a raça digitada
-        const response = await fetch(`http://10.106.208.7:3000/api/cachorros/${breed}`);
+        const url = `${API_BASE}/cachorros/${apiBreed}`;
+        const response = await fetch(`http://192.168.1.39:3000/api/cachorros/${apiBreed}`);
         console.log(response)
         const data = await response.json();
 

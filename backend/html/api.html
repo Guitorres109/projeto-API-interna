@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Dog API</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    color:#94a3b8;
+    margin-bottom:40px;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:10px;
+    margin-bottom:25px;
+}
+
+.endpoint{
+    background:#020617;
+    padding:15px;
+    border-radius:6px;
+    margin-top:10px;
+    font-family:monospace;
+}
+
+.method{
+    color:#22c55e;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+a{
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+.footer{
+    margin-top:40px;
+    color:#64748b;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🐶 Dog API</h1>
+<p class="subtitle">API simples de imagens de cachorros feita com Node.js + Express</p>
+
+<div class="card">
+<h2>📚 Sobre</h2>
+<p>
+Esta API retorna imagens de cachorros em formato JSON.
+As imagens estão armazenadas no servidor dentro da pasta <b>data/fotos</b>.
+</p>
+</div>
+
+<div class="card">
+<h2>🔗 Endpoints</h2>
+
+<div class="endpoint">
+<span class="method">GET</span>
+<a href="/api/cachorros/aleatorio">/api/cachorros/aleatorio</a>
+<br>
+Retorna uma imagem aleatória de cachorro.
+</div>
+
+<div class="endpoint">
+<span class="method">GET</span>
+/api/cachorros/:raca
+<br>
+Exemplo:
+<a href="/api/cachorros/husky">/api/cachorros/husky</a>
+</div>
+
+</div>
+
+<div class="card">
+<h2>📦 Exemplo de resposta</h2>
+
+<div class="endpoint">
+{
+<br>
+&nbsp;&nbsp;"status": "success",
+<br>
+&nbsp;&nbsp;"message": "http://localhost:3000/fotos/husky/1.jpg"
+<br>
+}
+</div>
+
+</div>
+
+<div class="card">
+<h2>📁 Acesso direto às imagens</h2>
+
+<div class="endpoint">
+/fotos/nome-da-imagem.jpg
+</div>
+
+</div>
+
+<div class="footer">
+Desenvolvido por <b>Guilherme Torres</b><br>
+Projeto Node.js + Express
+</div>
+
+</div>
+
+</body>
+</html>
